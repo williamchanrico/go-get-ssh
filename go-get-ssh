@@ -21,7 +21,7 @@ if [[ -z "${GOPATH}" ]]; then
 	exit
 fi
 
-# Remove "https://" prefix if exists
+# Remove "https://" or any protocol prefix if exists
 repo_go_import_path=${1##*\/\/}
 repo_local_path="$GOPATH/src/$repo_go_import_path"
 repo_remote_ssh_path="git@${repo_go_import_path%%/*}:${repo_go_import_path#*/}.git"
