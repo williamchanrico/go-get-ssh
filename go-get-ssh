@@ -26,7 +26,7 @@ repo_remote_ssh_path="git@${1%%/*}:${1#*/}.git"
 
 if [[ ! -d "$repo_local_path" ]]; then
 	# Create import directory and cd into it
-	mkdir -p $repo_local_path
+	mkdir -p $repo_local_path && cd $repo_local_path
 
 	# Clone the repository
 	git clone $repo_remote_ssh_path .
